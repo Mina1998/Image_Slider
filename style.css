@@ -20,6 +20,7 @@ body {
     position: absolute;
     opacity: 0;
     transition: 1s;
+    border-radius: 6px;
     z-index: 1;
 }
 
@@ -42,14 +43,14 @@ body {
 .slider-controls {
     width: 960px;
     margin: auto;
+    overflow: hidden;
 }
 
 .slider-controls .previous,
-.slider-container .next {
+.slider-controls .next {
     background-color: #009688;
     color: #FFF;
     font-size: 16px;
-    width: 80px;
     text-align: center;
     cursor: pointer;
     border-radius: 4px;
@@ -57,4 +58,47 @@ body {
     -webkit-user-select: none;
     user-select: none;
     width: 20%;
+}
+
+.slider-controls .previous {
+    float: left;
+}
+.slider-controls .next {
+    float: right;
+}
+
+.slider-controls .previous.disabled,
+.slider-controls .next.disabled {
+    pointer-events: none;
+    cursor: no-drop;
+    background-color: #00968781;
+}
+
+.slider-controls .indicators {
+    width: 60%;
+    float: left;
+}
+
+.slider-controls .indicators ul {
+    list-style: none;
+    margin: 0;
+    text-align: center;
+}
+
+.slider-controls .indicators ul li {
+    display: inline-block;
+    background-color: #F6F6F6;
+    color: #333;
+    font-weight: bold;
+    height: 28px;
+    width: 28px;
+    border-radius: 4px;
+    margin: 0 2px;
+    line-height: 28px;
+    cursor: pointer;
+}
+
+.slider-controls .indicators ul li.active {
+    background-color: #009688;
+    color: #FFF;
 }
